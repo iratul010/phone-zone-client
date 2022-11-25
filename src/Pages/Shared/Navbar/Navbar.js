@@ -35,7 +35,7 @@ const Navbar = () => {
             {menuItems}
           </ul>
         </div>
-        <Link to="/" className="btn btn-ghost normal-case text-xl">
+        <Link to="/" className="btn btn-ghost normal-case text-xl lg:text-3xl text-accent font-bold">
           Mobile Zone
         </Link>
       </div>

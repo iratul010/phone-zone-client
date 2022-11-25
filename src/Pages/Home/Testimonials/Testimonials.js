@@ -38,7 +38,7 @@ const Testimonials = () => {
       <div className="flex text-accent  justify-between">
         <div>
           <h3 className="text-xl font-semibold text-primary">Testimonials</h3>
-          <h2 className="text-4xl">What Our Customer's Says!</h2>
+          <h2 className="text-4xl">What They Say!</h2>
         </div>
         <figure>
           <img className=" w-24 lg:w-48" src="{quote}" alt="" />

@@ -3,7 +3,7 @@ import { FaRegStar } from "react-icons/fa";
 const Review = ({ review }) => {
   const { name, img, review: Review, location, rating } = review;
   return (
-    <div className="card  text-accent  shadow-xl">
+    <div className="card  text-accent bg-stone-50">
       <div className="card-body">
         <p>{Review}</p>
         <div className="card-actions gap-10 mt-5">
