@@ -1,35 +1,30 @@
-import React, { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+
 import CategoriesBrandName from "../CategoriesBrandName/CategoriesBrandName";
 
 const Categories = () => {
-  const brandCategory = [
-    {
-      _id: 1,
-      categoryName: "iPhone",
-      categoryPhoto: "https://i.ibb.co/xsxG14X/iphone-1.png",
+  const { data: categories = [], isLoading } = useQuery({
+    queryKey: ["categories"],
+    queryFn: async () => {
+      const res = await fetch("http://localhost:5000/categories");
+      const data = await res.json();
+      return data;
     },
-    {
-      _id: 2,
-      categoryName: "OnePlu+",
-      categoryPhoto: "https://i.ibb.co/64m9RG9/oneplus-1.png",
-    },
-    {
-      _id: 3,
-      categoryName: "Xiaomi",
-      categoryPhoto: "https://i.ibb.co/Ss1Z0V0/xiaomi.png",
-    },
-  ];
-
+  });
+  if (isLoading) {
+    return <h2>Loading...</h2>;
+  }
   return (
-    <div>
+    <div className="grid grid-cols-1 justify-center items-center">
       <div>
         {" "}
         <p className="text-xl font-semibold text-primary ">Our Products</p>
-        <h2 className="text-center text-5xl font-bold text-accent">Product Service</h2>
+        <h2 className=" text-3xl font-bold text-accent">Product Service</h2>
+        <p className="  text-semibold text-accent"> Here Second-hand purchases Categories Names.</p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
-        {brandCategory.map((category) => (
-          <CategoriesBrandName key={category._id} category={category}></CategoriesBrandName>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
+        {categories.map((category, i) => (
+          <CategoriesBrandName key={i} category={category}></CategoriesBrandName>
         ))}
       </div>
     </div>

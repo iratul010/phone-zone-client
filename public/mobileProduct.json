@@ -2,7 +2,7 @@
   {
     "productName": "Xiaomi 12 Pro",
     "categoryName": "Xiaomi",
-    "categoryPhoto": "https://i.ibb.co/Ss1Z0V0/xiaomi.png",
+    "categoryPhoto": "https://i.ibb.co/RYkpy4j/mipn.png",
     "categoryID": "03",
     "productPhoto": "https://i.ibb.co/tJ4JFYr/Xiaomi-12-Pro.png",
     "orgProPrice": 24999,
@@ -21,7 +21,7 @@
   {
     "productName": "OnePlus 10T 5G",
     "categoryName": "OnePlus",
-    "categoryPhoto": "https://i.ibb.co/5nWjZ75/oneplus.png",
+    "categoryPhoto": "https://i.ibb.co/Wx0SW7M/plus.png",
     "categoryID": "02",
     "productPhoto": "https://i.ibb.co/Lz5yxFR/One-Plus-10-T-5-G.jpg",
     "orgProPrice": 41000,
@@ -40,7 +40,7 @@
   {
     "productName": "Redmi Note 11 Pro+ 5G",
     "categoryName": "Xiaomi",
-    "categoryPhoto": "https://i.ibb.co/Ss1Z0V0/xiaomi.png",
+    "categoryPhoto": "https://i.ibb.co/RYkpy4j/mipn.png",
     "categoryID": "03",
     "productPhoto": "https://i.ibb.co/DbdCZkd/Redmi-Note-11-Pro-5-G.jpg",
     "orgProPrice": 18999,
@@ -60,7 +60,7 @@
   {
     "productName": "Apple iPhone 12 3D mode",
     "categoryName": "iPhone",
-    "categoryPhoto": "https://i.ibb.co/FsBp6hb/iphone.png",
+    "categoryPhoto": "https://i.ibb.co/xsxG14X/iphone-1.png",
     "categoryID": "01",
     "productPhoto": "https://i.ibb.co/wBS68ks/Apple-i-Phone-12-3-D-mode.jpg",
     "orgProPrice": 85999,
@@ -79,7 +79,7 @@
   {
     "productName": "OnePlus Nord N20 SE",
     "categoryName": "OnePlus",
-    "categoryPhoto": "https://i.ibb.co/5nWjZ75/oneplus.png",
+    "categoryPhoto": "https://i.ibb.co/Wx0SW7M/plus.png",
     "categoryID": "02",
     "productPhoto": "https://i.ibb.co/mq59W8C/One-Plus-Nord-N20-SE.jpg",
     "orgProPrice": 46000,
@@ -99,7 +99,7 @@
   {
     "productName": "iPhone Phone 13 mini",
     "categoryName": "iPhone",
-    "categoryPhoto": "https://i.ibb.co/FsBp6hb/iphone.png",
+    "categoryPhoto": "https://i.ibb.co/xsxG14X/iphone-1.png",
     "categoryID": "01",
     "productPhoto": "https://i.ibb.co/Rhmn4d6/Apple-i-Phone-13-mini.jpg",
     "orgProPrice": 70000,
