@@ -1,5 +1,5 @@
 import React from "react";
-import { FaRegStar } from "react-icons/fa";
+
 const Review = ({ review }) => {
   const { name, img, review: Review, location, rating } = review;
   return (

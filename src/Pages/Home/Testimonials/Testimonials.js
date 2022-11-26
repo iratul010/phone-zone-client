@@ -36,7 +36,7 @@ const Testimonials = () => {
   return (
     <section className="my-16 ">
       <div className="flex text-accent  justify-between">
-        <div>
+        <div className="p-4">
           <h3 className="text-xl font-semibold text-primary">Testimonials</h3>
           <h2 className="text-4xl">What They Say!</h2>
         </div>

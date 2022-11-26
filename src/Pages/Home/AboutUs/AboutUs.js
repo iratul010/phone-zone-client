@@ -15,7 +15,7 @@ const AboutUs = () => {
   return (
     <div className="hero text-accent ">
       <div className="hero-content flex-col lg:flex-row-reverse">
-        <div className="text-center lg:text-left">
+        <div className="text-center lg:text-left w-1/2">
           <h1 className="text-5xl font-bold">About Us!</h1>
           <p className="py-6">
             Our service is very fast and convenient for your & You are getting good quality mobile phone with good price in your
@@ -27,8 +27,8 @@ const AboutUs = () => {
                 <div key={about._id}>
                   {" "}
                   <li>
-                    <p className="text-[#FCBC05] flex items-center gap-1">
-                      ` <FaCheckCircle /> {about.name}`
+                    <p className="  flex items-center gap-1 font-semibold text-accent">
+                      <FaCheckCircle className="text-success" /> {about.name}`
                     </p>
 
                     <small className="ml-2">{about.details}</small>
@@ -38,7 +38,7 @@ const AboutUs = () => {
             </ul>
           </div>
         </div>
-        <div className="card flex-shrink-0 w-full max-w-sm   bg-base-100">
+        <div className="card flex-shrink-0 w-full max-w-sm     bg-base-100">
           <div className="card-body">
             <img src={aboutUs} alt="" />
           </div>
