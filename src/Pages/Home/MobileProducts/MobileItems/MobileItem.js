@@ -43,7 +43,7 @@ const MobileItem = ({ mobile, setBrandsName }) => {
           Installment: {status} <strong>({conditionOfProduct})</strong>
         </p>
         <p>
-          Uses of year: {usesOfYear} {usesOfYear <= 1 ? "months" : "years"}.
+          Uses of year: {usesOfYear} {usesOfYear <= 1 ? "months" : "years"}
         </p>
         <p>Product added Date: {productAddedDate}</p>
         <div className="card-actions justify-end">
