@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import MobileItem from "./MobileItem";
 
-const MobileItems = () => {
+const MobileItems = ({ setDetails, setProductsPrice }) => {
   const mobiles = useLoaderData();
 
   const [brandsName, setBrandsName] = useState("");
+
   return (
     <div>
-      {/* Apple iPhones at EMI (Best Price in Bangladesh)
-4 items found for "Apple" in Mobiles */}
       <div className="m-10">
         {mobiles.length && (
           <>
@@ -25,7 +24,13 @@ const MobileItems = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 m-10">
         {mobiles.map((mobile, i) => (
-          <MobileItem key={i} mobile={mobile} setBrandsName={setBrandsName}></MobileItem>
+          <MobileItem
+            key={i}
+            mobile={mobile}
+            setBrandsName={setBrandsName}
+            setDetails={setDetails}
+            setProductsPrice={setProductsPrice}
+          ></MobileItem>
         ))}
       </div>
     </div>

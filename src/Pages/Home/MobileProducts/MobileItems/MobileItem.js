@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaRegHeart, FaShareAlt } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../../../contexts/AuthProvider";
 
-const MobileItem = ({ mobile, setBrandsName }) => {
+const MobileItem = ({ mobile, setBrandsName, setDetails, setProductsPrice }) => {
   const time = new Date().toLocaleString();
+
   console.log(time);
+  // const { setMobileName } = useContext(AuthContext);
   const {
     productName,
     categoryName,
@@ -22,8 +26,11 @@ const MobileItem = ({ mobile, setBrandsName }) => {
     isAdvertised,
     isSellerVerified,
   } = mobile;
-  console.log(mobile);
+
   setBrandsName(categoryName);
+  const handleModalInformation = () => {
+    setDetails(mobile);
+  };
   return (
     <div className="card  p-5 bg-base-100 shadow-xl text-accent">
       <figure className="max-h-[300px]">
@@ -47,9 +54,15 @@ const MobileItem = ({ mobile, setBrandsName }) => {
         </p>
         <p>Product added Date: {productAddedDate}</p>
         <div className="card-actions justify-end">
-          <label htmlFor="booking-modal" className="btn btn-primary text-white">
-            Booking Now!
-          </label>
+          {mobile.status === "Booked" ? (
+            <label onClick={handleModalInformation} htmlFor="booking-modal" className="btn  text-white btn-disabled">
+              Booking Now!
+            </label>
+          ) : (
+            <label onClick={handleModalInformation} htmlFor="booking-modal" className="btn btn-primary text-white">
+              Booking Now!
+            </label>
+          )}
         </div>
       </div>
       <p className="p-3 text-end">{locationOfSeller}</p>

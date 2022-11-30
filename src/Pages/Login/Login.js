@@ -1,23 +1,47 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import { FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import img from "../../assets/images/login.png";
+import { AuthContext } from "../../contexts/AuthProvider";
 
 const Login = () => {
+  const [loginError, setLoginError] = useState("");
+  const { login } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathName || "/";
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
   const handleLogin = (data) => {
-    console.log(data);
+    setLoginError("");
+    console.log(data, errors);
+    login(data.email, data.password)
+      .then((res) => {
+        const user = res.user;
+        console.log(user);
+        if (user.accessToken) {
+          toast.success("Login Success");
+          navigate(from, { replace: true });
+        }
+      })
+      .catch((err) => {
+        console.error(err.message);
+        setLoginError(err.message);
+      });
   };
   return (
-    <div className="lg:h-[700px] grid grid-cols-1 lg:grid-cols-2 w-full lg:w-3/5  justify-center items-center mx-auto gap-10  text-accent bg-gray-50 rounded p-10">
-      <img src={img} alt="img" />
+    <div className="lg:h-[700px] grid grid-cols-1 lg:grid-cols-2 w-full lg:w-3/5  justify-center items-center mx-auto gap-10  text-accent   rounded p-10">
+      <div>
+        {" "}
+        <img src={img} alt="img" />
+      </div>
 
-      <div className="p-10">
+      <div className="p-10 ">
         <h2 className="text-4xl">Login</h2>
         <form onSubmit={handleSubmit(handleLogin)}>
           <div className="form-control w-full max-w-xs">
@@ -62,7 +86,7 @@ const Login = () => {
             )}
           </div>
           <input type="submit" value="Login" className="btn btn-primary  w-full max-w-xs text-white " />
-          {/* <div>{loginError && <p className="text-red-400">{loginError}</p>}</div> */}
+          <div>{loginError && <p className="text-red-400">{loginError}</p>}</div>
         </form>
         <p className="m-2">
           New to Mobile Zone?{" "}
@@ -70,7 +94,7 @@ const Login = () => {
             Create new account
           </Link>
         </p>
-        <div className="divider">OR</div>
+        <div className="divider ">OR</div>
         {/* onClick="{handleGoogleSignIn}" */}
         <button className="btn btn-outline text-accent hover:text-black  w-full">
           <FaGoogle className="text-3xl" />

@@ -4,7 +4,7 @@ module.exports = {
   daisyui: {
     themes: [
       {
-        mobilezone: {
+        mobileZoneTheme: {
           primary: "#1FB2A6",
 
           secondary: "#ffe4c4",
