@@ -25,7 +25,6 @@ const AboutUs = () => {
             <ul className="p-2 bg-base-100">
               {about.map((about) => (
                 <div key={about._id}>
-                  {" "}
                   <li>
                     <p className="  flex items-center gap-1 font-semibold text-accent">
                       <FaCheckCircle className="text-success" /> {about.name}`
