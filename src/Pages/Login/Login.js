@@ -7,6 +7,7 @@ import img from "../../assets/images/login.png";
 import { AuthContext } from "../../contexts/AuthProvider";
 
 const Login = () => {
+  const [token, setToken] = useState("");
   const [loginError, setLoginError] = useState("");
   const { login, signInGooglePopup } = useContext(AuthContext);
   const location = useLocation();
@@ -23,10 +24,25 @@ const Login = () => {
     login(data.email, data.password)
       .then((res) => {
         const user = res.user;
-        console.log(user);
+        const currentUser = {
+          email: data.email,
+        };
         if (user.accessToken) {
           toast.success("Login Success");
-          navigate(from, { replace: true });
+          // navigate(from, { replace: true });
+          fetch("http://localhost:5000/jwt", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(currentUser),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              console.log(data);
+              localStorage.setItem("accessToken", data.accessToken);
+              setToken(data.accessToken);
+            });
         }
       })
       .catch((err) => {
