@@ -8,7 +8,7 @@ import { AuthContext } from "../../contexts/AuthProvider";
 
 const Login = () => {
   const [loginError, setLoginError] = useState("");
-  const { login } = useContext(AuthContext);
+  const { login, signInGooglePopup } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   const from = location.state?.from?.pathName || "/";
@@ -32,6 +32,16 @@ const Login = () => {
       .catch((err) => {
         console.error(err.message);
         setLoginError(err.message);
+      });
+  };
+  const handleGoogleSignIn = () => {
+    signInGooglePopup()
+      .then((res) => {
+        const user = res.user;
+        console.log(user);
+      })
+      .catch((err) => {
+        console.error(err);
       });
   };
   return (
@@ -95,8 +105,8 @@ const Login = () => {
           </Link>
         </p>
         <div className="divider ">OR</div>
-        {/* onClick="{handleGoogleSignIn}" */}
-        <button className="btn btn-outline text-accent hover:text-black  w-full">
+
+        <button className="btn btn-outline text-accent hover:text-black  w-full" onClick={handleGoogleSignIn}>
           <FaGoogle className="text-3xl" />
         </button>
       </div>

@@ -1,11 +1,13 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
+import Dashboard from "../Pages/DashBoard/DashBorad/Dashboard";
 import Navbar from "../Pages/Shared/Navbar/Navbar";
 
 const DashboardLayout = () => {
   return (
     <div>
       <Navbar></Navbar>
+
       <div className="drawer drawer-mobile">
         <input id="mobile-drawer" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content ">

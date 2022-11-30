@@ -7,7 +7,8 @@ import { AuthContext } from "../../contexts/AuthProvider";
 import toast from "react-hot-toast";
 const SignUp = () => {
   const [signInError, setSignInError] = useState("");
-  const { createUser, updateUserProfile } = useContext(AuthContext);
+  const { createUser, updateUserProfile, signInGooglePopup } = useContext(AuthContext);
+
   const navigate = useNavigate();
   const {
     register,
@@ -82,6 +83,16 @@ const SignUp = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+      });
+  };
+  const handleGoogleSignIn = () => {
+    signInGooglePopup()
+      .then((res) => {
+        const user = res.user;
+        console.log(user);
+      })
+      .catch((err) => {
+        console.error(err);
       });
   };
 
@@ -185,8 +196,8 @@ const SignUp = () => {
           </Link>
         </p>
         <div className="divider ">OR</div>
-        {/* onClick="{handleGoogleSignIn}" */}
-        <button className="btn btn-outline text-accent hover:text-black  w-full">
+
+        <button className="btn btn-outline text-accent hover:text-black  w-full" onClick={handleGoogleSignIn}>
           <FaGoogle className="text-3xl" />
         </button>
       </div>

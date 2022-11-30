@@ -8,6 +8,7 @@ import AddToProducts from "../../Pages/DashBoard/AddToProducts/AddToProducts";
 import AllBuyers from "../../Pages/DashBoard/AllBuyers/AllBuyers";
 import AllSellers from "../../Pages/DashBoard/AllSellers/AllSellers";
 import AllUsers from "../../Pages/DashBoard/AllUsers/AllUsers";
+import Dashboard from "../../Pages/DashBoard/DashBorad/Dashboard";
 import MyOrders from "../../Pages/DashBoard/MyOrders/MyOrders";
 import MyProducts from "../../Pages/DashBoard/MyProducts/MyProducts";
 
@@ -59,7 +60,9 @@ const router = createBrowserRouter([
     path: "/dashboard",
     element: (
       <PrivateRoutes>
-        <DashboardLayout></DashboardLayout>
+        <DashboardLayout>
+          <Dashboard></Dashboard>
+        </DashboardLayout>
       </PrivateRoutes>
     ),
     children: [
@@ -78,6 +81,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/myOrders",
         element: <MyOrders></MyOrders>,
+      },
+      {
+        path: "/dashboard/myProducts",
+        element: <MyProducts></MyProducts>,
       },
       {
         path: "/dashboard/addToProducts",

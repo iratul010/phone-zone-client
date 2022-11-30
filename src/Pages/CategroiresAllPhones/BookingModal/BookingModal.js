@@ -121,9 +121,6 @@ const BookingModal = ({ details, setDetails }) => {
                 <span className="label-text text-accent">Province</span>
               </label>
               <select className="select w-full  text-slate-400 " {...register("province")}>
-                <option disabled selected>
-                  Please choose your province
-                </option>
                 <option name="province" value="Barishal">
                   Barishal
                 </option>
